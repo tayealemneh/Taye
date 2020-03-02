@@ -1,4 +1,4 @@
-package com.taye.firebasepro;
+package com.taye.usersSession.recyclerview;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -18,6 +18,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.taye.usersSession.R;
 
 import java.util.ArrayList;
 public class MainActivity2 extends AppCompatActivity {

@@ -1,4 +1,4 @@
-package com.taye.firebasepro;
+package com.taye.usersSession.recyclerview;
 
 public class users {
     public String fullName,sex,phone,userName,email,password;

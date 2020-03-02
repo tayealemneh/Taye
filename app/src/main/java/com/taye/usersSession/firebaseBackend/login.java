@@ -1,4 +1,4 @@
-package com.taye.firebasepro;
+package com.taye.usersSession.firebaseBackend;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -15,6 +15,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.taye.usersSession.R;
 
 public class login extends AppCompatActivity {
     EditText email2, password2;

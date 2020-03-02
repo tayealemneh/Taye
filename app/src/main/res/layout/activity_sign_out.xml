@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#D2389083"
     android:padding="5dp"
-    tools:context=".sign_out">
+    tools:context=".firebaseBackend.sign_out">
 
     <Button
         android:id="@+id/logout"

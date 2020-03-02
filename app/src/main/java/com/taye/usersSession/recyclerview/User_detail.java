@@ -1,10 +1,12 @@
-package com.taye.firebasepro;
+package com.taye.usersSession.recyclerview;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.taye.usersSession.R;
 
 public class User_detail extends AppCompatActivity {
 

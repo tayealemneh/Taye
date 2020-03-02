@@ -1,4 +1,4 @@
-package com.taye.firebasepro;
+package com.taye.usersSession.recyclerview;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -14,16 +14,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
+import com.taye.usersSession.R;
 
 import java.util.ArrayList;
-
 public class ListUsers extends RecyclerView.Adapter<ListUsers.userHolder> {
-
-
-        ArrayList<users> users;
+        ArrayList<com.taye.usersSession.recyclerview.users> users;
         DatabaseReference databaseReference;
-        public ListUsers(ArrayList<users> students, DatabaseReference myRef){
-            this.users=students;
+        public ListUsers(ArrayList<users> users, DatabaseReference myRef){
+            this.users=users;
             this.databaseReference=myRef;
         }
 
@@ -39,8 +37,8 @@ public class ListUsers extends RecyclerView.Adapter<ListUsers.userHolder> {
         public void onBindViewHolder(@NonNull userHolder holder, int pp) {
             final int p=pp;
             final String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
-            holder.tvName.setText(users.get(pp).getFullName());
-            holder.tvusername.setText(users.get(pp).getUserName());
+            holder.fullName.setText(users.get(pp).getFullName());
+            holder.username.setText(users.get(pp).getUserName());
             holder.cardView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
@@ -65,7 +63,7 @@ public class ListUsers extends RecyclerView.Adapter<ListUsers.userHolder> {
             holder.cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent=new Intent(v.getContext(),User_detail.class);
+                    Intent intent=new Intent(v.getContext(), User_detail.class);
                     intent.putExtra("Fullname",users.get(p).getFullName());
                     intent.putExtra("username",users.get(p).getUserName());
                     intent.putExtra("email",users.get(p).getEmail());
@@ -83,13 +81,13 @@ public class ListUsers extends RecyclerView.Adapter<ListUsers.userHolder> {
         }
 
         public  class userHolder extends RecyclerView.ViewHolder{
-            TextView tvName,tvusername;
+            TextView fullName,username;
             CardView cardView;
 
             public userHolder(@NonNull View itemView) {
                 super(itemView);
-                tvName=itemView.findViewById(R.id.fullname);
-                tvusername=itemView.findViewById(R.id.emailholdr);
+                fullName=itemView.findViewById(R.id.fullname);
+                username=itemView.findViewById(R.id.emailholdr);
                 cardView=itemView.findViewById(R.id.cardView);
             }
         }
